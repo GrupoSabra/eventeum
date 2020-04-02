@@ -6,7 +6,6 @@ services:
     ports:
     - "8060:8060"
     depends_on:
-      - parity
       - mongodb
       - kafka
     environment:

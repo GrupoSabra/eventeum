@@ -10,8 +10,6 @@ docker-compose down
 
 echo "removing storage"
 sudo rm -rf $HOME/mongodb/data
-sudo rm -rf $HOME/parity/data:/root/
-sudo rm -rf $HOME/parity/log
 
 composescript="docker-compose.yml"
 
@@ -23,12 +21,8 @@ elif [ "$1" = "infra" ]; then
    echo "Running in Infrastructure mode..."
 fi
 
-docker-compose -f "$composescript" build
-[ $? -eq 0 ] || exit $?;
-
-
 echo "Start"
-docker-compose -f "$composescript" up
+docker-compose -f "$composescript" up -d
 [ $? -eq 0 ] || exit $?;
 
 trap "docker-compose -f "$composescript" kill" INT
