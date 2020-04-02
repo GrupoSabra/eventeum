@@ -1,12 +1,16 @@
 # Despliegue
+```
 cd server
 ./docker-compose.sh
+```
 
 El nodo que apunta el ejemplo es http://168.61.41.127:8545
 
 # Borrado
+```
 cd server
 ./del-docker-compose.sh
+```
 
 # Eventeum
 An Ethereum event listener that bridges your smart contract events and backend microservices. Eventeum listens for specified event emissions from the Ethereum network, and broadcasts these events into your middleware layer. This provides a distinct separation of concerns and means that your microservices do not have to subscribe to events directly to an Ethereum node.
