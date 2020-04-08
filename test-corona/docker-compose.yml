@@ -7,12 +7,11 @@ services:
     - "8060:8060"
     depends_on:
       - mongodb
-      - postgres
     environment:
-      SPRING_DATA_MONGODB_HOST: mongodb
-      SPRING_DATA_MONGODB_PORT: 27017
+      SPRING_DATA_MONGODB_HOST: ${SPRING_DATA_MONGODB_HOST}
+      SPRING_DATA_MONGODB_PORT: ${SPRING_DATA_MONGODB_PORT}
       ETHEREUM_NODE_URL: ${ETHEREUM_NODE_URL}
-      BROADCASTER_TYPE: HTTP
+      BROADCASTER_TYPE: $(BROADCASTER_TYPE)
       BROADCASTER_HTTP_CONTRACTEVENTSURL: ${BROADCASTER_HTTP_CONTRACTEVENTSURL}
       BROADCASTER_HTTP_BLOCKEVENTSURL: ${BROADCASTER_HTTP_BLOCKEVENTSURL}
     networks:
@@ -28,11 +27,11 @@ services:
       - default
 
   postgres:
-    image: postgres:11.7
+    image: kartoza/postgis
     ports:
       - "5432:5432"
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_PASS: ${POSTGRES_PASS}
     networks:
       - default
