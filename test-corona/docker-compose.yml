@@ -6,7 +6,7 @@ services:
     ports:
     - "8060:8060"
     depends_on:
-      - mongodb+
+      - mongodb
       - postgres
     environment:
       SPRING_DATA_MONGODB_HOST: mongodb
