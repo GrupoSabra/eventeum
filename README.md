@@ -1,15 +1,32 @@
 # Despliegue
 ```
-cd server
-./docker-compose.sh
+cd test-corona
+# Revisar variables .env
+SPRING_DATA_MONGODB_HOST=mongodb
+SPRING_DATA_MONGODB_PORT=27017
+ETHEREUM_NODE_URL=http://168.61.41.127:8545
+BROADCASTER_TYPE=HTTP
+BROADCASTER_HTTP_CONTRACTEVENTSURL=http://localhost:3000/events
+BROADCASTER_HTTP_BLOCKEVENTSURL=http://localhost:3000/block
+POSTGRES_USER=user
+POSTGRES_PASS=password
+
+docker-compose up -d
 ```
 
 El nodo que apunta el ejemplo es http://168.61.41.127:8545
 
 # Borrado
 ```
-cd server
-./del-docker-compose.sh
+cd test-corona
+docker-compose down
+```
+
+# Parado / Encendido
+```
+cd test-corona
+docker-compose start
+docker-compose stop
 ```
 
 # Eventeum
