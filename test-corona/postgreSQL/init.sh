@@ -14,3 +14,6 @@ psql -d ${DB_NAME} -a -U${POSTGRES_USER} -f /countries-bin.sql
 
 echo "Creating states..."
 psql -d ${DB_NAME} -a  -U${POSTGRES_USER} -f /states-bin.sql
+
+# pg_restore -j 8 -U postgres -d CovidDB countries-bin.sql
+# pg_restore -j 8 -U postgres -d CovidDB states-bin.sql
