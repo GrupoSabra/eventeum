@@ -39,7 +39,7 @@ services:
       - default
 
   david19-import:
-    image: sabradevregistry01.azurecr.io/david19-import:1.0.0
+    image: sabradevregistry01.azurecr.io/david19-import:1.0.1
     ports:
       - "8080:80"
     depends_on:
@@ -50,7 +50,7 @@ services:
       - default
 
   david19-api:
-    image: sabradevregistry01.azurecr.io/david19-api:1.0.0
+    image: sabradevregistry01.azurecr.io/david19-api:1.0.1
     ports:
       - "80:80"
       - "443:443"
